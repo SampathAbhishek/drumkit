@@ -1,0 +1,141 @@
+This tutorial will help in understanding higher order functions and advanced dom manipulation:-
+
+1.addEventListener()
+whenever u click a button this active listener will listen that and call corresponding function which will
+perform the action.This is how the functionality of a button in js works.
+
+document.querySelector("button").addEventListener("click",handleClick);
+
+function handleClick(){
+  alert("I am Clicked!");
+}
+
+Using Anonymous Function:-
+document.querySelector("button").addEventListener("click",function (){
+  alert("I am Clicked!");
+});
+
+diff bet querySelector and querySelectorAll 
+
+querySelector will pick the very first button on n buttons only.
+querySelectorAll will pick all n buttons in the form of array.
+
+Adding function to all buttons
+
+var numberOfButtons = document.querySelectorAll(".drum").length;
+
+for(var i=0;i<numberOfButtons;i++){
+document.querySelectorAll(".drum")[i].addEventListener("click",function (){
+  alert("I am Clicked!");
+});
+
+}
+
+fun activity:-
+1.go to javascript wikipedia website.
+2.inspect heading 
+3.now you can see the entire h1 tag is map to $0.
+4.that means we can directly use that to manipulate.
+5.So $0.innerHTML="sampathScript";
+6.u can also:-
+$0.addEventListener("click",function(){
+    console.log("i got clicked!!");
+});
+
+
+
+Higher order functions:-
+
+The functions which can take other functions as input are called higher order functions:-
+
+simple cal using js:-
+function add(num1,num2){
+          return num1 + num2;
+}
+function sub(num1,num2){
+          return num1 - num2;
+}
+function mul(num1,num2){
+          return num1 * num2;
+}
+function div(num1,num2){
+          return num1 / num2;
+}
+function calculator(num1,num2,operator){
+          return operator(num1,num2);
+}
+
+
+how to play sound?
+
+var audio = new Audio("sample.mp3");
+audio.play();
+
+this ---> helps to return the refernce of current object.
+this.style.color="white";--->can be used to modify the code as per our wish
+
+Constructor function:-
+the name should be capitalized.
+
+1.creation of constructor function:-
+function BellBoy(name,age,hasWorkPermit,languages){
+   this.name = name;
+   this.age = age;
+   this.hasWorkPermit = hasWorkPermit;
+   this.languages = languages;
+}
+
+2.initializing the object:-
+
+var bellBoy1 = new BellBoy("Timmy",19,true,["French","English"]);
+
+switch case - dont worry google or ur auto complete itself will help.
+
+
+now,lets talk about functionsor methods an object can have:-
+
+
+var bellBoy1 = {
+  name: "Timmy",
+  age:19,
+  hasWorkPermit : true,
+  languages: ["French","Telugu"],
+  moveSuitcase : function(){
+    alert("May I take your suit case");
+   pickUpSuitcase();
+   move();
+}
+}
+
+if we want to include it in our constructor function:-
+
+function BellBoy(name,age,hasWorkPermit,languages){
+   this.name = name;
+   this.age = age;
+   this.hasWorkPermit = hasWorkPermit;
+   this.languages = languages;
+   this.moveSuitcase = function() {
+   alert("May I take your suit case");
+   pickUpSuitcase();
+   move();
+}
+}
+
+
+
+learning about key board listeners.
+we can add it to document so that entire website keeps listening until some key is pressed.
+
+
+document.addEventListener("keydown",function(){
+  alert(""key was pressed");
+)
+
+
+Understanding CallBacks and How to Respond to Events:-   (Watch video)
+
+call Back Function:-
+
+It will pass the input only after the event happened like someone pressed the key.
+
+
